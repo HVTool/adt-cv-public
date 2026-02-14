@@ -17,8 +17,6 @@
 | cv 13      | __ZÁPOČET 3__                                          |                           |
 | cv bonus 01| Ukázka distribuce funkčního SW, REZERVA                |                           |
 
-https://github.com/JakubSido/example_package
-
 
 ## Podpůrné materiály
 
