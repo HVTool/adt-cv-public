@@ -19,12 +19,21 @@ class Student:
     os_cislo: str
 
 def get_unique_subjects(data: list[tuple[str, str, str]]) -> set[str]:
+    seznam = []
+    for i in data:
+        seznam.append(i[2])
+
+
     """
     Vrátí množinu unikátních předmětů.
     """
-    return set() # PLACEHOLDER
+    return set(seznam) # PLACEHOLDER
 
 def group_students_by_subject(data: list[tuple[str, str, str]]) -> dict[str, list[Student]]:
+    slovnik = {}
+    for i in data:
+        student = Student(i[0], i[1])
+
     """
     Vrátí slovník, kde klíčem je předmět a hodnotou seznam studentů (instancí třídy Student),
     kteří jsou na předmět zapsáni.
@@ -32,6 +41,9 @@ def group_students_by_subject(data: list[tuple[str, str, str]]) -> dict[str, lis
     return {} # PLACEHOLDER
 
 def get_unique_students(data: list[tuple[str, str, str]]) -> set[Student]:
+    set_student = ()
+
+    
     """
     Vrátí množinu unikátních studentů.
     Pozor: Data obsahují duplicity (jeden student může mít více předmětů).
