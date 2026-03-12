@@ -6,19 +6,30 @@ from typing import Callable
 N_RUNS = 5
 
 def load_customers(shop_path: str) -> list[str]:
+    list_cust = []
+    with open(shop_path, "r", encoding="utf-8") as file:
+        data = file.readlines()
+        for line in range(1, len(data)):
+            zaznam = data[line].strip().split(";")
+            list_cust.append(zaznam[2])
+
     """Načte data z konkrétní cesty a vrací seznam ID zákazníků."""
-    return []
+    return list_cust
 
 
 def check_ckpt_list(customers: list[str]) -> list[str]:
     """Varianta A: vrátí seznam unikátních zákazníků v seznamu."""
     seen: list[str] = []
+    for i in customers:
+        if i not in seen:
+            seen.append(i)
     return seen
 
 
 def check_ckpt_set(customers: list[str]) -> set[str]:
     """Varianta B: vrátí množinu unikátních zákazníků v množin."""
     seen: set[str] = set()
+    seen = set(customers)
     return seen
 
 
@@ -27,6 +38,15 @@ def measure(
     customers: list[str],
     n_runs: int = N_RUNS,
 ) -> float:
+    start_time = timeit.default_timer()
+
+    for _ in range(n_runs):
+        func(customers)
+
+    end_time = timeit.default_timer()
+
+    return (end_time - start_time)
+
     """Změří čas běhu funkce func(customers) nástrojem timeit."""
     return -1.0
 
