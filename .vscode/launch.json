@@ -9,9 +9,8 @@
             "name": "Python Debugger: Current File",
             "type": "debugpy",
             "request": "launch",
-            "program": "04-complexity_b/main.py",
-            "console": "integratedTerminal",
-            "args": ["data/cities"]
+            "program": "07-backtracking/main.py",
+            "console": "integratedTerminal"
         }
     ]
 }
